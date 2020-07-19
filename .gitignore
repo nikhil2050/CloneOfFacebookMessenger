@@ -1,0 +1,47 @@
+package-lock.json
+
+clone-of-facebook-messenger/node_modules
+
+./clone-of-facebook-messenger/node_modules
+
+clone-of-facebook-messenger/src/firebase.js
+
+./clone-of-facebook-messenger/src/firebase.js
+
+clone-of-facebook-messenger/.firebase/*
+
+./clone-of-facebook-messenger/.firebase/*
+
+clone-of-facebook-messenger/.firebaserc
+
+./clone-of-facebook-messenger/.firebaserc
+
+clone-of-facebook-messenger/.vscode/*
+
+./clone-of-facebook-messenger/.vscode/*
+
+clone-of-facebook-messenger/firebase.json
+
+./clone-of-facebook-messenger/firebase.json
+
+# This gitignore is taken from https://github.com/github/gitignore/blob/master/Java.gitignore
+
+# Compiled class file
+*.class
+
+# Log file
+*.log
+
+# BlueJ files
+*.ctxt
+
+# J2ME files
+.mtj.tmp/
+
+# Package files
+*.jar
+*.war
+*.ear
+*.zip
+*.tar.gz
+*.rar
