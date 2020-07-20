@@ -12,7 +12,7 @@ function App() {
       {username:'Nk1', text:'Hello world'},
       {username:'Nk2', text:'Hello India'}
   ])
-  const [username, setUsername] = useState('') 
+  const [loggedUsername, setLoggedUsername] = useState('') 
 
   console.log(inputText);
 
@@ -23,18 +23,18 @@ function App() {
     event.preventDefault()
 
     // all logic to send message here..
-    setMessageArray([...messageArray, {username:username, text:inputText}])  // Append 'inputText' in messageArray
+    setMessageArray([...messageArray, {username:loggedUsername, text:inputText}])  // Append 'inputText' in messageArray
     setInputText('')
   }
 
   useEffect(() => {
     // On app load, take username
-    setUsername(prompt('Please enter your name'))
+    setLoggedUsername(prompt('Please enter your name'))
   },[])
 
   return (
     <div className="App">
-      <h2> Welcome {username}</h2>
+      <h2> Welcome {loggedUsername}</h2>
       <form>  
         <FormControl >
 
@@ -53,7 +53,7 @@ function App() {
         {/* Message */}
         {
           messageArray.map((message) => (
-            <Message username={message.username} text={message.text} />)
+            <Message loggedUsername={loggedUsername} message={message} />)
           )
         }
       </form> 
