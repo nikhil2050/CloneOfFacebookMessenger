@@ -6,6 +6,7 @@ import { FormControl, InputLabel, FormHelperText, Input } from '@material-ui/cor
 import Message from './components/Message';
 import db from './firebase';
 import firebase from 'firebase'
+import FlipMove from 'react-flip-move'
 
 function App() {
 
@@ -44,9 +45,10 @@ function App() {
   useEffect(()=>{
      db.collection('fbmsngr_messages').orderBy('timestamp','desc')
         .onSnapshot(snapshot => {
-          setMessageArray(snapshot.docs.map(doc => (
-              doc.data()
-          )))
+          setMessageArray(snapshot.docs.map(doc => ( {
+            id:doc.id,
+            message: doc.data()
+          } )))
         })
   },[])
 
@@ -69,11 +71,13 @@ function App() {
         {/* Message */}
         {/* Message */}
         {/* Message */}
+        <FlipMove>
         {
-          messageArray.map((message) => (
-            <Message loggedUsername={loggedUsername} message={message} />)
+          messageArray.map(({id, message}) => ( // Refer: setMessageArray() above
+            <Message key={id} loggedUsername={loggedUsername} message={message} />)
           )
         }
+        </FlipMove>
       </form> 
     </div>
   );
