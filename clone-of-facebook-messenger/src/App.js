@@ -7,6 +7,8 @@ import Message from './components/Message';
 import db from './firebase';
 import firebase from 'firebase'
 import FlipMove from 'react-flip-move'
+import SendIcon from '@material-ui/icons/Send';
+import { IconButton } from '@material-ui/core';
 
 function App() {
 
@@ -54,19 +56,25 @@ function App() {
 
   return (
     <div className="App">
+      <img src="https://scontent.fnag4-1.fna.fbcdn.net/v/t39.8562-6/37789948_1959933824027454_666414594595487744_n.png?_nc_cat=1&_nc_sid=6825c5&_nc_ohc=-0zelYTEZukAX-bOlq9&_nc_ht=scontent.fnag4-1.fna&oh=f18294493effb2d85fa239b2cbef50c1&oe=5F3CFFB3" />
       <h2> Welcome {loggedUsername}</h2>
-      <form>  
-        <FormControl >
+      <form className="app__form">  
+        <FormControl className="app__formcontrol">
 
           {/* input field */}
-          <InputLabel> Enter a message.. </InputLabel>
-          <Input value={inputText} onChange={e => setInputText(e.target.value)} />
+          {/* <InputLabel> Enter a message.. </InputLabel> */}
+          <Input className="app_inputText" value={inputText} onChange={e => setInputText(e.target.value)} />
         
           {/* button */}
-          <Button type="submit" onClick={sendMessage} disabled={!inputText} 
-              variant='contained' color='primary'> Send message </Button>
+          <IconButton className="app_sendIcon" type="submit" onClick={sendMessage} disabled={!inputText} 
+              variant='contained' color='primary' >
+            <SendIcon />
+          </IconButton>
+          {/* <Button type="submit" onClick={sendMessage} disabled={!inputText} 
+              variant='contained' color='primary'> Send message </Button> */}
 
         </FormControl>
+      </form> 
 
         {/* Message */}
         {/* Message */}
@@ -78,7 +86,6 @@ function App() {
           )
         }
         </FlipMove>
-      </form> 
     </div>
   );
 }

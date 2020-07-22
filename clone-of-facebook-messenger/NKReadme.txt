@@ -8,4 +8,5 @@ Libraries:
 1. npm install @material-ui/core
 2. npm install firebase
 3. npm i -S react-flip-move (Reference: https://github.com/joshwcomeau/react-flip-move#usage-with-functional-components)
+4. npm  i @material-ui/icons
 
